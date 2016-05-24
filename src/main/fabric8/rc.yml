@@ -1,0 +1,22 @@
+spec:
+  replicas: 1
+  template:
+    spec:
+      volumes:
+        - name: config
+          gitRepo:
+            repository: 'https://github.com/jstrachan/sample-springboot-config.git'
+            revision: 2ef301a91db95605ea79220f289a9b18a56b827f
+            directory: config
+      containers:
+        - volumeMounts:
+            - name: config
+              mountPath: /app-config
+          env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+      serviceAccount: fabric8
+
