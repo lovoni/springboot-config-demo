@@ -6,12 +6,12 @@ spec:
         - name: config
           gitRepo:
             repository: 'https://github.com/jstrachan/sample-springboot-config.git'
-            revision: 2ef301a91db95605ea79220f289a9b18a56b827f
-            directory: config
+            revision: 667ee4db6bc842b127825351e5c9bae5a4fb2147
+            directory: .
       containers:
         - volumeMounts:
             - name: config
-              mountPath: /app-config
+              mountPath: /app/config
           env:
             - name: KUBERNETES_NAMESPACE
               valueFrom:

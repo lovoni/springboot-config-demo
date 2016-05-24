@@ -11,3 +11,5 @@ ribbon:
   http:
     client:
       enabled: true
+
+name: default name
