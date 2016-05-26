@@ -18,5 +18,5 @@ spec:
                 fieldRef:
                   apiVersion: v1
                   fieldPath: metadata.namespace
-      serviceAccount: ribbon
+      serviceAccountName: ribbon
 
